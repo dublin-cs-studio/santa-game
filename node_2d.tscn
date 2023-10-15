@@ -1,12 +1,79 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq71le0f3xe1a"]
+[gd_scene load_steps=9 format=3 uid="uid://dq71le0f3xe1a"]
 
 [ext_resource type="Texture2D" uid="uid://cdn4vavsckbb5" path="res://assets/art/santa.png" id="1_y0fpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7pxb"]
 size = Vector2(63, 64)
 
-[sub_resource type="Animation" id="Animation_80dw6"]
+[sub_resource type="Animation" id="Animation_7tfka"]
+resource_name = "walk-up"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [104, 105, 106, 107, 108, 109, 110, 111, 112]
+}
+
+[sub_resource type="Animation" id="Animation_kx56y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [105]
+}
+
+[sub_resource type="Animation" id="Animation_1ghk6"]
+resource_name = "walk-left"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [117, 118, 119, 120, 121, 122, 123, 124, 125]
+}
+
+[sub_resource type="Animation" id="Animation_61kab"]
+resource_name = "walk-down"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [130, 131, 132, 133, 134, 135, 136, 137, 138]
+}
+
+[sub_resource type="Animation" id="Animation_fsr7c"]
 resource_name = "walk-right"
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -21,25 +88,13 @@ tracks/0/keys = {
 "values": [143, 144, 145, 146, 147, 148, 149, 150, 151]
 }
 
-[sub_resource type="Animation" id="Animation_7bqeb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [143]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yix2l"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5nyt"]
 _data = {
-"RESET": SubResource("Animation_7bqeb"),
-"walk-right": SubResource("Animation_80dw6")
+"RESET": SubResource("Animation_kx56y"),
+"walk-down": SubResource("Animation_61kab"),
+"walk-left": SubResource("Animation_1ghk6"),
+"walk-right": SubResource("Animation_fsr7c"),
+"walk-up": SubResource("Animation_7tfka")
 }
 
 [node name="Player" type="Area2D"]
@@ -53,9 +108,9 @@ shape = SubResource("RectangleShape2D_l7pxb")
 texture = ExtResource("1_y0fpv")
 hframes = 13
 vframes = 21
-frame = 143
+frame = 105
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_yix2l")
+"": SubResource("AnimationLibrary_o5nyt")
 }
