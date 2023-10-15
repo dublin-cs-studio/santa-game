@@ -1,26 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq71le0f3xe1a"]
+[gd_scene load_steps=9 format=3 uid="uid://d0ne8xwalcsge"]
 
-[ext_resource type="Texture2D" uid="uid://cdn4vavsckbb5" path="res://assets/art/santa.png" id="1_y0fpv"]
+[ext_resource type="Texture2D" uid="uid://cdn4vavsckbb5" path="res://assets/art/santa.png" id="1_m4pqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7pxb"]
 size = Vector2(63, 64)
-
-[sub_resource type="Animation" id="Animation_7tfka"]
-resource_name = "walk-up"
-length = 0.9
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [104, 105, 106, 107, 108, 109, 110, 111, 112]
-}
 
 [sub_resource type="Animation" id="Animation_kx56y"]
 length = 0.001
@@ -35,23 +18,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [105]
-}
-
-[sub_resource type="Animation" id="Animation_1ghk6"]
-resource_name = "walk-left"
-length = 0.9
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [117, 118, 119, 120, 121, 122, 123, 124, 125]
 }
 
 [sub_resource type="Animation" id="Animation_61kab"]
@@ -71,6 +37,23 @@ tracks/0/keys = {
 "values": [130, 131, 132, 133, 134, 135, 136, 137, 138]
 }
 
+[sub_resource type="Animation" id="Animation_1ghk6"]
+resource_name = "walk-left"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [117, 118, 119, 120, 121, 122, 123, 124, 125]
+}
+
 [sub_resource type="Animation" id="Animation_fsr7c"]
 resource_name = "walk-right"
 length = 0.9
@@ -86,6 +69,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [143, 144, 145, 146, 147, 148, 149, 150, 151]
+}
+
+[sub_resource type="Animation" id="Animation_7tfka"]
+resource_name = "walk-up"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [104, 105, 106, 107, 108, 109, 110, 111, 112]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o5nyt"]
@@ -105,7 +105,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_l7pxb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_y0fpv")
+texture = ExtResource("1_m4pqd")
 hframes = 13
 vframes = 21
 frame = 105
